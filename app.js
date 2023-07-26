@@ -1,10 +1,11 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import keys from './config/keys.js';
+import keys from './backend/config/keys.js';
 const { MongoURI: db } = keys;
-import blogRoutes from './routes/blogs.js';
-import commentRoutes from './routes/comments.js';
+import blogRoutes from './backend/routes/blogs.js';
+import commentRoutes from './backend/routes/comments.js';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Routes
+app.use(cors());
 app.use('/api/posts', blogRoutes);
 app.use('/api/comments', commentRoutes);
 
