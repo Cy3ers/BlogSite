@@ -5,6 +5,7 @@ import BlogList from './components/BlogList.jsx';
 import Search from './components/Search.jsx';
 import TaggedBlogs from './components/TaggedBlogs.jsx';
 import './styles/App.css';
+import './styles/Home.css';
 
 function App() {
   return (

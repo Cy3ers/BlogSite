@@ -1,0 +1,42 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.home-content {
+  max-width: 800px;
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.home-title {
+  font-size: 3rem;
+  color: #dcdcdc;
+  margin-bottom: 20px;
+}
+
+.home-description {
+  font-size: 1.5rem;
+  color: #bfbfbf;
+  margin-bottom: 40px;
+}
+
+.explore-button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  color: #dcdcdc;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: #0056b3;
+}
