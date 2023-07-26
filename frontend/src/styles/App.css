@@ -33,8 +33,17 @@ nav ul li a {
   text-decoration: none;
 }
 
-h2 {
-  margin-bottom: 15px;
+.container-title {
+  padding: 8px 16px;
+  margin: auto;
+  text-align: center;
+}
+
+.blog {
+  border: none;
+  border-radius: 5px;
+  padding: 5%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 ul {
@@ -50,6 +59,15 @@ li {
 
 p {
   margin: 0;
+}
+
+.author {
+  margin: 10px 0;
+}
+
+.tags {
+  margin: 10px;
+  color: #7b7b7b;
 }
 
 button {

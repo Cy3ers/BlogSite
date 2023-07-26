@@ -12,16 +12,16 @@ const BlogList = () => {
 
   return (
     <div className="container">
-      <h2>Blog List</h2>
-      <ul>
+      <h1 className="container-title">Blog List</h1>
+      <ul className="container-content">
         {blogs.map((blog) => (
-          <li key={blog._id}>
-            <h3>{blog.title}</h3>
-            <p>{blog.content}</p>
-            <p>
+          <li key={blog._id} className="blog">
+            <h3 className="title">{blog.title}</h3>
+            <p className="author">
               <strong>Author:</strong> {blog.author}
             </p>
-            <p>
+            <p className="content">{blog.content}</p>
+            <p className="tags">
               <strong>Tags:</strong> {blog.tags.join(', ')}
             </p>
           </li>
