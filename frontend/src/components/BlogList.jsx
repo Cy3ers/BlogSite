@@ -24,6 +24,18 @@ const BlogList = () => {
             <p className="tags">
               <strong>Tags:</strong> {blog.tags.join(', ')}
             </p>
+            <h4>Comments:</h4>
+            <ul className="comment-list">
+              {blog.comments && blog.comments.length > 0 ? (
+                blog.comments.map((comment) => (
+                  <li className="comment-content" key={comment._id}>
+                    {comment.content}
+                  </li>
+                ))
+              ) : (
+                <li className="no-comments">No comments yet.</li>
+              )}
+            </ul>
           </li>
         ))}
       </ul>
