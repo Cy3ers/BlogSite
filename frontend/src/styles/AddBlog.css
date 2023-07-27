@@ -1,17 +1,4 @@
 /* AddBlog.css */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.container-title {
-  padding: 8px 16px;
-  margin: auto;
-  text-align: center;
-  font-size: 2rem;
-  color: #333;
-}
 
 .form-group {
   margin-bottom: 20px;

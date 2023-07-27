@@ -14,18 +14,18 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
+        <nav className="navbar">
+          <ul className="nav-list">
+            <li className="nav-home">
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li className="nav-blogs">
               <Link to="/blogs">Blogs</Link>
             </li>
-            <li>
+            <li className="nav-search">
               <Link to="/search">Search</Link>
             </li>
-            <li className="Add-button">
+            <li className="nav-add">
               <Link to="/addBlog">New Blog</Link>
             </li>
           </ul>
