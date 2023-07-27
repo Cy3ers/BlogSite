@@ -4,35 +4,72 @@ import axios from 'axios';
 const Search = () => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const handleSearch = () => {
+    setLoading(true);
     axios
       .get(`http://localhost:5000/api/posts/search?query=${query}`)
       .then((response) => {
         setResults(response.data);
+        setLoading(false);
       });
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      setLoading(true);
+      handleSearch();
+    }
+  };
+
   return (
-    <div>
-      <h2>Search Blogs</h2>
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
-      <ul>
-        {results.map((blog) => (
-          <li key={blog._id}>
-            <h3>{blog.title}</h3>
-            <p>{blog.content}</p>
-            <p>Author: {blog.author}</p>
-            <p>Tags: {blog.tags.join(', ')}</p>
-            <hr />
-          </li>
-        ))}
-      </ul>
+    <div className="container">
+      <div className="container-title">
+        <div className="search-container">
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Search..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyUp={handleKeyPress}
+          />
+          <i className="fa fa-search search-icon" onClick={handleSearch}></i>
+        </div>
+      </div>
+      {loading ? (
+        <div className="loading-container">
+          <div className="loading-circle"></div>
+        </div>
+      ) : (
+        <ul className="container-content">
+          {results.map((blog) => (
+            <li key={blog._id} className="blog">
+              <h3 className="title">{blog.title}</h3>
+              <p className="author">
+                <strong>Author:</strong> {blog.author}
+              </p>
+              <p className="content">{blog.content}</p>
+              <p className="tags">
+                <strong>Tags:</strong> {blog.tags.join(', ')}
+              </p>
+              {/* <h4>Comments:</h4>
+            <ul className="comment-list">
+              {blog.comments && blog.comments.length > 0 ? (
+                blog.comments.map((comment) => (
+                  <li className="comment-content" key={comment._id}>
+                    {comment.content}
+                  </li>
+                ))
+              ) : (
+                <li className="no-comments">No comments yet.</li>
+              )}
+            </ul> */}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

@@ -9,7 +9,7 @@ const Home = () => {
         <p className="home-description">
           Explore a world of fascinating blog posts on various topics.
         </p>
-        <Link to="/blogs">
+        <Link to="/blogs" className="explore-link">
           <button className="explore-button">Explore Blogs</button>
         </Link>
       </div>

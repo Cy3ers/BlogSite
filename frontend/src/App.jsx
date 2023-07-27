@@ -6,6 +6,7 @@ import Search from './components/Search.jsx';
 import TaggedBlogs from './components/TaggedBlogs.jsx';
 import './styles/App.css';
 import './styles/Home.css';
+import './styles/Search.css';
 
 function App() {
   return (

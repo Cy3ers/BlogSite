@@ -1,36 +1,44 @@
+/* Home.css */
 .home-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
+  background-image: url('../../public/blogs-bg.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .home-content {
   max-width: 800px;
   padding: 50px 20px;
   text-align: center;
-  background-color: #333;
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .home-title {
   font-size: 3rem;
-  color: #dcdcdc;
+  color: #333;
   margin-bottom: 20px;
 }
 
 .home-description {
   font-size: 1.5rem;
-  color: #bfbfbf;
+  color: #666;
   margin-bottom: 40px;
+}
+
+.explore-link {
+  text-decoration: none;
 }
 
 .explore-button {
   padding: 12px 24px;
   font-size: 1.2rem;
-  color: #dcdcdc;
-  background-color: #007bff;
+  color: #fff;
+  background-color: #007fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;

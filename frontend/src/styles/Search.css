@@ -1,0 +1,25 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.search-icon {
+  padding: 8px;
+  color: #888;
+}
+
+.search-icon:hover {
+  color: #555;
+  cursor: pointer;
+}
