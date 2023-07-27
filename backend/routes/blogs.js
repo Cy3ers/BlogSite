@@ -83,42 +83,38 @@ router.get('/search', async (req, res) => {
   }
 });
 
-// Get posts by tag
-router.get('/tags/:tag', async (req, res) => {
+// Get a single post by ID
+router.get('/:id', async (req, res) => {
   try {
-    const { tag } = req.params;
+    const { id } = req.params;
 
-    const blogs = await Blog.find({ tags: tag });
+    const blog = await Blog.findById(id);
 
-    // Fetch comments for each post
-    const blogsWithComments = await Promise.all(
-      blogs.map(async (blog) => {
-        const comments = await Comment.find({ blogId: blog._id });
-        return { ...blog.toObject(), comments };
-      })
-    );
+    if (!blog) {
+      return res.status(404).json({ message: 'Blog not found' });
+    }
 
-    res.json(blogsWithComments);
+    const comments = await Comment.find({ blogId: blog._id });
+
+    res.json({ ...blog.toObject(), comments });
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
   }
 });
 
-// Delete a post by title
-router.delete('/:title', async (req, res) => {
+// Delete a post by ID
+router.delete('/:id', async (req, res) => {
   try {
-    // Decode the URL-encoded title
-    let { title } = req.params;
-    title = decodeURIComponent(title);
+    const { id } = req.params;
 
-    const blog = await Blog.findOneAndDelete({ title });
+    const blog = await Blog.findOneAndDelete({ _id: id });
 
     if (!blog) {
       return res.status(404).json({ message: 'Blog not found' });
     }
 
-    const deletedComments = await Comment.deleteMany({ blogId: blog._id });
+    const deletedComments = await Comment.deleteMany({ blogId: id });
     const deleteCommentsCount = deletedComments.deletedCount || 0;
     if (deleteCommentsCount > 0) {
       console.log(`Deleted ${deleteCommentsCount} comments for: ${blog.title}`);

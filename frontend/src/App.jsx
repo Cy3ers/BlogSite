@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './components/Home.jsx';
 import BlogList from './components/BlogList.jsx';
 import Search from './components/Search.jsx';
-import TaggedBlogs from './components/TaggedBlogs.jsx';
+// import TaggedBlogs from './components/TaggedBlogs.jsx';
 import AddBlog from './components/AddBlog.jsx';
+import FullBlog from './components/FullBlog.jsx';
 import './styles/App.css';
 import './styles/Home.css';
 import './styles/Search.css';
@@ -36,7 +37,7 @@ function App() {
           <Route exact path="/blogs" element={<BlogList />} />
           <Route exact path="/search" element={<Search />} />
           <Route exact path="/addBlog" element={<AddBlog />} />
-          <Route path="/tags/:tag" element={<TaggedBlogs />} />
+          <Route exact path="/blog/:id" element={<FullBlog />} />
         </Routes>
       </div>
     </Router>

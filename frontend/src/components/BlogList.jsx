@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const BlogList = () => {
   const [blogs, setBlogs] = useState([]);
@@ -23,26 +24,17 @@ const BlogList = () => {
         <ul className="container-content">
           {blogs.map((blog) => (
             <li key={blog._id} className="blog">
-              <h3 className="title">{blog.title}</h3>
+              <h3 className="title">
+                <Link className="to-blog-details" to={`/blog/${blog._id}`}>
+                  {blog.title}
+                </Link>{' '}
+              </h3>
               <p className="author">
                 <strong>Author:</strong> {blog.author}
               </p>
-              <p className="content">{blog.content}</p>
               <p className="tags">
                 <strong>Tags:</strong> {blog.tags.join(', ')}
               </p>
-              <h4>Comments:</h4>
-              <ul className="comment-list">
-                {blog.comments && blog.comments.length > 0 ? (
-                  blog.comments.map((comment) => (
-                    <li className="comment-content" key={comment._id}>
-                      {comment.content}
-                    </li>
-                  ))
-                ) : (
-                  <li className="no-comments">No comments yet.</li>
-                )}
-              </ul>
             </li>
           ))}
         </ul>
