@@ -1,0 +1,87 @@
+/* AddBlog.css */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container-title {
+  padding: 8px 16px;
+  margin: auto;
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.input-box {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.examples {
+  display: inline;
+  font-size: 0.8rem;
+  color: #c6c6c6;
+}
+
+.textarea {
+  height: 150px;
+  resize: none;
+  overflow-y: auto;
+}
+
+.add-button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #007fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+.explore-link {
+  text-decoration: none;
+}
+
+.explore-button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #007fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.explore-button:hover {
+  background-color: #0056b3;
+}
+
+.success-message {
+  font-size: 1.2rem;
+  color: #007fff;
+  text-align: center;
+  margin-bottom: 20px;
+}

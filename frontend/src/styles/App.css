@@ -36,6 +36,11 @@ nav ul li a {
   text-decoration: none;
 }
 
+nav ul li a:hover {
+  color: #cdcdcd;
+  text-decoration: none;
+}
+
 .container-title {
   padding: 8px 16px;
   margin: auto;
