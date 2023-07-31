@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Search = () => {
   const [query, setQuery] = useState('');
@@ -46,11 +47,14 @@ const Search = () => {
         <ul className="container-content">
           {results.map((blog) => (
             <li key={blog._id} className="blog">
-              <h3 className="title">{blog.title}</h3>
+              <h3 className="title">
+                <Link className="to-blog-details" to={`/blog/${blog._id}`}>
+                  {blog.title}
+                </Link>
+              </h3>
               <p className="author">
                 <strong>Author:</strong> {blog.author}
               </p>
-              <p className="content">{blog.content}</p>
               <p className="tags">
                 <strong>Tags:</strong> {blog.tags.join(', ')}
               </p>
