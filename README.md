@@ -90,4 +90,4 @@ Contributions to the Blog Web App are welcome! If you find any issues or have su
 
 ## License
 
-The Recipe App is open-source software.
+The Blog Web App is open-source software.
