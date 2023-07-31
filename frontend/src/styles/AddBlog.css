@@ -2,7 +2,7 @@
 
 .add-blog-body {
   background-image: url('../../public/AddBlogBg.jpg');
-  background-size: 100%;
+  background-size: 135%;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -19,7 +19,7 @@
 }
 
 .form-group-tags {
-  color: #d2d2d2;
+  color: #333;
 }
 
 .input-box {
@@ -43,11 +43,16 @@
 }
 
 .add-button {
+  display: block;
+  align-self: center;
   padding: 12px 24px;
   font-size: 1.2rem;
   color: #fff;
   background-color: #007fff;
+  opacity: 90%;
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -55,6 +60,7 @@
 }
 
 .add-button:hover {
+  opacity: 100%;
   background-color: #0056b3;
 }
 
