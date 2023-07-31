@@ -1,5 +1,12 @@
 /* AddBlog.css */
 
+.add-blog-body {
+  background-image: url('../../public/AddBlogBg.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .form-group {
   margin-bottom: 20px;
 }
@@ -9,6 +16,10 @@
   font-size: 1.2rem;
   color: #333;
   margin-bottom: 5px;
+}
+
+.form-group-tags {
+  color: #d2d2d2;
 }
 
 .input-box {
@@ -22,7 +33,7 @@
 .examples {
   display: inline;
   font-size: 0.8rem;
-  color: #c6c6c6;
+  color: #929292;
 }
 
 .textarea {
@@ -36,6 +47,7 @@
   font-size: 1.2rem;
   color: #fff;
   background-color: #007fff;
+  margin-top: 20px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -46,29 +58,17 @@
   background-color: #0056b3;
 }
 
-.explore-link {
-  text-decoration: none;
-}
-
-.explore-button {
-  padding: 12px 24px;
-  font-size: 1.2rem;
-  color: #fff;
-  background-color: #007fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-left: 10px;
-}
-
-.explore-button:hover {
-  background-color: #0056b3;
-}
-
 .success-message {
+  display: block;
+  align-self: center;
   font-size: 1.2rem;
-  color: #007fff;
+  background-color: #ffffff96;
+  border: none;
+  border-radius: 5px;
+  width: fit-content;
+  color: #333;
   text-align: center;
   margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }

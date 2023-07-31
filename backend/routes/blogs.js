@@ -24,24 +24,38 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/edit/:title', async (req, res) => {
+// Edit Post by ID
+router.put('/edit/:id', async (req, res) => {
   try {
-    // Decode the URL-encoded title
-    let { title } = req.params;
-    title = decodeURIComponent(title);
+    const { id } = req.params;
+    const { content, title, tags } = req.body;
 
-    const contentMod = req.body.content;
+    if (!content) {
+      return res.status(400).json({ message: 'Content is required for edit' });
+    }
 
-    const updatedBlog = await Blog.findOneAndUpdate(
-      { title },
-      { $set: { content: contentMod } },
+    const updateFields = {};
+    if (content) {
+      updateFields.content = content;
+    }
+    if (title) {
+      updateFields.title = title;
+    }
+    if (tags) {
+      updateFields.tags = tags;
+    }
+
+    const updatedBlog = await Blog.findByIdAndUpdate(
+      id,
+      { $set: updateFields },
       { new: true }
     );
+
     if (updatedBlog) {
-      console.log(`${title}\'s content changed successfully`);
+      console.log(`${id}'s content changed successfully`);
       res.send(updatedBlog.toObject());
     } else {
-      res.status(404).send('Task not found');
+      res.status(404).send('Blog not found');
     }
   } catch (err) {
     console.log(err);
