@@ -1,17 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import useBlogList from '../hooks/useBlogList';
 
 const BlogList = () => {
-  const [blogs, setBlogs] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    axios.get('http://localhost:5000/api/posts').then((response) => {
-      setBlogs(response.data);
-      setLoading(false);
-    });
-  }, []);
+  const { blogs, loading } = useBlogList();
 
   return (
     <div className="container">
