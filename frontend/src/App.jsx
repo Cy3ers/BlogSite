@@ -10,6 +10,7 @@ import './styles/App.css';
 import './styles/Home.css';
 import './styles/Search.css';
 import './styles/AddBlog.css';
+import './styles/FullBlog.css';
 
 function App() {
   return (

@@ -1,0 +1,60 @@
+/* FullBlog.css */
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.comment-content {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.no-comments {
+  font-style: italic;
+  color: #777;
+}
+
+.add-comment-container {
+  margin-top: 20px;
+}
+
+.add-comment-container input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 70%;
+}
+
+.add-comment-container button {
+  padding: 8px 16px;
+  background-color: #007fff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.add-comment-container button:hover {
+  background-color: #0056b3;
+}
+
+.delete-comment-button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-comment-button:hover {
+  background-color: #bd2130;
+}

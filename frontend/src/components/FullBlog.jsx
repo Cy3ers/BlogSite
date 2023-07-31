@@ -9,10 +9,13 @@ const FullBlog = () => {
   const navigate = useNavigate();
   const [blog, setBlog] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [comment, setComment] = useState('');
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     axios.get(`http://localhost:5000/api/posts/${id}`).then((response) => {
       setBlog(response.data);
+      setComments(response.data.comments);
       setLoading(false);
     });
   }, [id]);
@@ -24,6 +27,37 @@ const FullBlog = () => {
         .then((response) => {
           console.log(response.data.message);
           navigate('/Blogs');
+        })
+        .catch((error) => {
+          console.error(error.message);
+        });
+    }
+  };
+
+  const handleDeleteComment = (commentId) => {
+    axios
+      .delete(`http://localhost:5000/api/comments/delete/${commentId}`)
+      .then((response) => {
+        console.log(response.data.message);
+        setComments((prevComments) =>
+          prevComments.filter((comment) => comment._id !== commentId)
+        );
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
+
+  const handleAddComment = () => {
+    if (comment.trim() !== '') {
+      axios
+        .post(`http://localhost:5000/api/comments`, {
+          blogId: id,
+          content: comment,
+        })
+        .then((response) => {
+          setComments([...comments, response.data]);
+          setComment('');
         })
         .catch((error) => {
           console.error(error.message);
@@ -68,16 +102,37 @@ const FullBlog = () => {
             </p>
             <h4>Comments:</h4>
             <ul className="comment-list">
-              {blog.comments && blog.comments.length > 0 ? (
-                blog.comments.map((comment) => (
+              {comments && comments.length > 0 ? (
+                comments.map((comment) => (
                   <li className="comment-content" key={comment._id}>
-                    {comment.content}
+                    {comment.content}{' '}
+                    <FaTimes
+                      style={{ color: 'red', cursor: 'pointer' }}
+                      onMouseEnter={(e) =>
+                        (e.target.style.transform = 'scale(1.10)')
+                      }
+                      onMouseLeave={(e) =>
+                        (e.target.style.transform = 'scale(1)')
+                      }
+                      onClick={() => handleDeleteComment(comment._id)}
+                    />
                   </li>
                 ))
               ) : (
                 <li className="no-comments">No comments yet.</li>
               )}
             </ul>
+            <div className="add-comment-container">
+              <input
+                type="text"
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                placeholder="Add a comment..."
+              />
+              <button className="add-comment-button" onClick={handleAddComment}>
+                Add Comment
+              </button>
+            </div>
           </li>
         </ul>
       )}
