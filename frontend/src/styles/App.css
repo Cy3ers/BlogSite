@@ -148,27 +148,33 @@ nav ul li a {
   color: #7b7b7b;
 }
 
-ul.comment-list {
-  list-style: none;
-  padding: 0;
-}
-
-.comment-content {
-  background-color: #f5f5f5;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.no-comments {
-  font-style: italic;
-  color: #777;
-}
-
 button {
   padding: 10px 15px;
   background-color: #333;
   color: #fff;
   border: none;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+    background-position: center;
+  }
+
+  nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 8px 12px;
+    text-decoration: none;
+  }
+
+  .container {
+    padding: 25px;
+  }
+
+  .container-title {
+    padding-top: 20px;
+  }
 }

@@ -58,3 +58,25 @@
 .delete-comment-button:hover {
   background-color: #bd2130;
 }
+
+@media (max-width: 768px) {
+  .comment-list {
+    font-size: 0.85rem;
+  }
+
+  .comment-content {
+    padding: 7px;
+    border-radius: 6px;
+  }
+
+  .add-comment-container input {
+    padding: 6px;
+    width: 94.5%;
+  }
+
+  .add-comment-container button {
+    padding: 6px 12px;
+    margin-top: 5px;
+    margin-left: 0;
+  }
+}
