@@ -26,23 +26,11 @@ const FullBlog = () => {
         <ul className="container-content">
           <li key={blog._id} className="blog">
             <h3 className="title">
-              {blog.title}{' '}
+              {blog.title}
+              <FaTimes className="delete-button" onClick={handleDelete} />
               <Link to={`/editBlog/${blog._id}`}>
-                <BiEdit
-                  style={{ color: 'gray', cursor: 'pointer' }}
-                  onMouseEnter={(e) =>
-                    (e.target.style.transform = 'scale(1.10)')
-                  }
-                  onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
-                  onClick={Link}
-                />
+                <BiEdit className="edit-button" onClick={Link} />
               </Link>
-              <FaTimes
-                style={{ color: 'red', cursor: 'pointer' }}
-                onMouseEnter={(e) => (e.target.style.transform = 'scale(1.10)')}
-                onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
-                onClick={handleDelete}
-              />
             </h3>
             <p className="author">
               <strong>Author:</strong> {blog.author}
@@ -56,15 +44,9 @@ const FullBlog = () => {
               {comments && comments.length > 0 ? (
                 comments.map((comment) => (
                   <li className="comment-content" key={comment._id}>
-                    {comment.content}{' '}
+                    {comment.content}
                     <FaTimes
-                      style={{ color: 'red', cursor: 'pointer' }}
-                      onMouseEnter={(e) =>
-                        (e.target.style.transform = 'scale(1.10)')
-                      }
-                      onMouseLeave={(e) =>
-                        (e.target.style.transform = 'scale(1)')
-                      }
+                      className="delete-button"
                       onClick={() => handleDeleteComment(comment._id)}
                     />
                   </li>

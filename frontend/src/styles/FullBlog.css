@@ -6,8 +6,6 @@
 }
 
 .comment-content {
-  display: flex;
-  justify-content: space-between;
   background-color: #f5f5f5;
   padding: 10px;
   border-radius: 10px;
@@ -45,20 +43,6 @@
   background-color: #0056b3;
 }
 
-.delete-comment-button {
-  padding: 5px 10px;
-  background-color: #dc3545;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.delete-comment-button:hover {
-  background-color: #bd2130;
-}
-
 @media (max-width: 768px) {
   .comment-list {
     font-size: 0.85rem;
@@ -79,4 +63,25 @@
     margin-top: 5px;
     margin-left: 0;
   }
+}
+
+.edit-button {
+  color: gray;
+  cursor: pointer;
+  float: right;
+  margin-right: 10px;
+}
+
+.edit-button:hover {
+  transform: scale(1.1);
+}
+
+.delete-button {
+  color: red;
+  cursor: pointer;
+  float: right;
+}
+
+.delete-button:hover {
+  transform: scale(1.1);
 }
