@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+import { addBlog } from '../api/api';
 
 const useAddBlogForm = () => {
   const [title, setTitle] = useState('');
@@ -20,9 +20,8 @@ const useAddBlogForm = () => {
     };
 
     // Send the blog data to the server
-    axios
-      .post('http://localhost:5000/api/posts', blogData)
-      .then((response) => {
+    addBlog(blogData)
+      .then(() => {
         setSuccessMessage('Blog added successfully!');
         setTitle('');
         setAuthor('');

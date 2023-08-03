@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { editBlog } from '../api/api';
 import withDataFetching from '../HOCs/withDataFetching';
 
 const EditBlog = ({ data }) => {
@@ -23,9 +23,8 @@ const EditBlog = ({ data }) => {
     };
 
     // Send the updated blog data to the server
-    axios
-      .put(`http://localhost:5000/api/posts/edit/${id}`, blogData)
-      .then((response) => {
+    editBlog({ id, blogData })
+      .then(() => {
         setSuccessMessage('Blog updated successfully!');
       })
       .catch((error) => {

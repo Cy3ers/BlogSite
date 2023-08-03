@@ -1,28 +1,10 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import useSearchInput from '../hooks/useSearchInput';
 
 const Search = () => {
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const handleSearch = () => {
-    setLoading(true);
-    axios
-      .get(`http://localhost:5000/api/posts/search?query=${query}`)
-      .then((response) => {
-        setResults(response.data);
-        setLoading(false);
-      });
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      setLoading(true);
-      handleSearch();
-    }
-  };
+  const { query, setQuery, results, loading, handleSearch, handleKeyPress } =
+    useSearchInput();
 
   return (
     <div className="container">

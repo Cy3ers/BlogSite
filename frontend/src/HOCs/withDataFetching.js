@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { getBlog } from '../api/api';
 
 const withDataFetching = (WrappedComponent) => {
   return (props) => {
@@ -9,8 +9,7 @@ const withDataFetching = (WrappedComponent) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-      axios
-        .get(`http://localhost:5000/api/posts/${id}`)
+      getBlog(id)
         .then((response) => {
           const { title, content, tags } = response.data;
           setData({ title, content, tags: tags.join(', ') });

@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { getBlogList } from '../api/api';
 
 const useBlogList = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/posts').then((response) => {
+    getBlogList().then((response) => {
       setBlogs(response.data);
       setLoading(false);
     });

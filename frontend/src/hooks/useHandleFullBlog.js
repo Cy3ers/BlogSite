@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
+import { getBlog, deleteBlog, deleteComment, addComment } from '../api/api';
 
 const useHandleFullBlog = () => {
   const { id } = useParams();
@@ -11,7 +12,7 @@ const useHandleFullBlog = () => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/posts/${id}`).then((response) => {
+    getBlog(id).then((response) => {
       setBlog(response.data);
       setComments(response.data.comments);
       setLoading(false);
@@ -20,8 +21,7 @@ const useHandleFullBlog = () => {
 
   const handleDelete = () => {
     if (window.confirm('Are you sure you want to delete this blog?')) {
-      axios
-        .delete(`http://localhost:5000/api/posts/${id}`)
+      deleteBlog(id)
         .then((response) => {
           console.log(response.data.message);
           navigate('/Blogs');
@@ -33,8 +33,7 @@ const useHandleFullBlog = () => {
   };
 
   const handleDeleteComment = (commentId) => {
-    axios
-      .delete(`http://localhost:5000/api/comments/delete/${commentId}`)
+    deleteComment(commentId)
       .then((response) => {
         console.log(response.data.message);
         setComments((prevComments) =>
@@ -48,11 +47,10 @@ const useHandleFullBlog = () => {
 
   const handleAddComment = () => {
     if (comment.trim() !== '') {
-      axios
-        .post(`http://localhost:5000/api/comments`, {
-          blogId: id,
-          content: comment,
-        })
+      addComment({
+        blogId: id,
+        content: comment,
+      })
         .then((response) => {
           setComments([...comments, response.data]);
           setComment('');
