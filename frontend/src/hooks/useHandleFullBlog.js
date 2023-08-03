@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getBlog, deleteBlog, deleteComment, addComment } from '../api/api';
 
