@@ -15,7 +15,7 @@ export const addBlog = (blogData) => {
 };
 
 export const searchBlog = (query) => {
-  return axios.post(`${API_BASE_URL}/posts/search?query=${query}`);
+  return axios.get(`${API_BASE_URL}/posts/search?query=${query}`);
 };
 
 export const editBlog = ({ id, blogData }) => {
