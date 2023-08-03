@@ -18,7 +18,7 @@ const AddBlog = () => {
   return (
     <div className="add-blog-body">
       <div className="container">
-        <h1 className="container-title">Add Blog</h1>
+        <h1 className="add-title">Add Blog</h1>
         {successMessage && <p className="success-message">{successMessage}</p>}
         <form onSubmit={handleFormSubmit}>
           <div className="form-group">

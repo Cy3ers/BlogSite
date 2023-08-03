@@ -1,10 +1,18 @@
 /* AddBlog.css */
 
+.add-title {
+  margin: auto;
+  text-align: center;
+  font-size: 2rem;
+  color: #000;
+  padding-top: 15px;
+}
+
 .add-blog-body {
-  background-image: url('../../public/AddBlogBg.jpg');
-  background-size: 135%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #b0b0b0b2;
+  background-position: bottom;
+  padding-top: 16px;
+  height: 100vh;
 }
 
 .form-group {
@@ -14,12 +22,12 @@
 .form-group label {
   display: block;
   font-size: 1.2rem;
-  color: #333;
+  color: #000;
   margin-bottom: 5px;
 }
 
 .form-group-tags {
-  color: #333;
+  color: #000;
 }
 
 .input-box {
@@ -28,12 +36,18 @@
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
+  background-color: #dddddd;
+  opacity: 90%;
+}
+
+.input-box:focus {
+  opacity: 100%;
 }
 
 .examples {
   display: inline;
   font-size: 0.8rem;
-  color: #929292;
+  color: #606060;
 }
 
 .textarea {
@@ -47,7 +61,7 @@
   align-self: center;
   padding: 12px 24px;
   font-size: 1.2rem;
-  color: #fff;
+  color: #eee;
   background-color: #007fff;
   opacity: 90%;
   margin-top: 20px;
@@ -72,7 +86,7 @@
   border: none;
   border-radius: 5px;
   width: fit-content;
-  color: #333;
+  color: #000;
   text-align: center;
   margin-bottom: 20px;
   margin-left: auto;
@@ -88,7 +102,7 @@
   }
 
   .form-group label {
-    color: #333;
+    color: #cccccc;
     font-size: 1rem;
   }
 
