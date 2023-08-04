@@ -36,7 +36,17 @@ cd frontend
 npm install # For frontend dependencies
 ```
 
+You will also need to set-up a .env file:
+```bash
+# Create a .env file in the main project directory:
+# Add into the file the following things:
+NODE_ENV=development
+PORT=5000
+MONGOURI=YOUR_MONGO_URI # Put your Mongo Collection URI here
+```
+
 Start the development server:
+
 ```bash
 # In the project directory:
 npm start
@@ -45,11 +55,12 @@ npm start
 cd frontend
 npm start
 ```
+
 The app should now be running at [http://localhost:3000](http://localhost:3000).
 
 ## Usage
 
-Upon launching the app, you will the homepage. It is a basic welcoming page. There is a Nav-bar at the top that can be used to jump to any page you want. Otherwise you can press the 'Explore Blogs' button. That will take you to the page where all of the blogs are displayed with its Author and its relevant tags. Here you can scroll through all the blogs that are on the site. If you click the title on any of the Blogs, it will take you to its full view. Here you can click the 'X' button on the top right to delete the blog, or you can use the edit button to edit the blog. Below the blog are the comments where you can also delete any comment with the 'X' button next to the comment. You can also make a new comment.
+Upon launching the app, you will be on the homepage. It is a basic welcoming page. There is a Nav-bar at the top that can be used to jump to any page you want. Otherwise you can press the 'Explore Blogs' button. That will take you to the page where all of the blogs are displayed with its Author and its relevant tags. Here you can scroll through all the blogs that are on the site. If you click the title on any of the Blogs, it will take you to its full view. Here you can click the 'X' button on the top right to delete the blog, or you can use the edit button to edit the blog. Below the blog are the comments where you can also delete any comment with the 'X' button next to the comment. You can also make a new comment.
 
 You can use the Nav-bar to go to the search feature. Here you can use any keywords and the app will display any blogs relevant to the search if there are any. Again, clicking on any of the blog titles will take you to the full view of that blog.
 
