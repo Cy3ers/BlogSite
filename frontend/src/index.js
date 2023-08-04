@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { EditBlogProvider } from './contexts/EditBlogContext';
 import App from './App';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <EditBlogProvider>
     <App />
-  </EditBlogProvider>,
-  document.getElementById('root')
+  </EditBlogProvider>
 );

@@ -29,7 +29,7 @@ const FullBlog = () => {
               {blog.title}
               <FaTimes className="delete-button" onClick={handleDelete} />
               <Link to={`/editBlog/${blog._id}`}>
-                <BiEdit className="edit-button" onClick={Link} />
+                <BiEdit className="edit-button" />
               </Link>
             </h3>
             <p className="author">
