@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { EditBlogContext } from '../contexts/EditBlogContext';
 import { editBlog } from '../api/api';
 import withDataFetching from '../HOCs/withDataFetching';
 
 const EditBlog = ({ data }) => {
   const { id } = useParams();
   const { title, content, tags } = data;
+
+  const editBlogContext = useContext(EditBlogContext);
 
   const [updatedTitle, setUpdatedTitle] = useState(title);
   const [updatedContent, setUpdatedContent] = useState(content);
@@ -30,6 +33,10 @@ const EditBlog = ({ data }) => {
       .catch((error) => {
         console.error(error);
       });
+  };
+
+  const handleEditData = () => {
+    editBlogContext.setEditData(data);
   };
 
   return (
@@ -74,7 +81,7 @@ const EditBlog = ({ data }) => {
               placeholder="Enter tags"
             />
           </div>
-          <button type="submit" className="add-button">
+          <button type="submit" className="add-button" onClick={handleEditData}>
             Submit
           </button>
         </form>

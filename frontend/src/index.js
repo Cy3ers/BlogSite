@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { EditBlogProvider } from './contexts/EditBlogContext';
 import App from './App';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <EditBlogProvider>
     <App />
-  </React.StrictMode>,
+  </EditBlogProvider>,
   document.getElementById('root')
 );

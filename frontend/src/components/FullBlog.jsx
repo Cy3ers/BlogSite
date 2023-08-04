@@ -35,7 +35,14 @@ const FullBlog = () => {
             <p className="author">
               <strong>Author:</strong> {blog.author}
             </p>
-            <p className="content">{blog.content}</p>
+            <p className="content">
+              {blog.content.split('\n').map((paragraph, index) => (
+                <React.Fragment key={index}>
+                  {paragraph}
+                  <br />
+                </React.Fragment>
+              ))}
+            </p>
             <p className="tags">
               <strong>Tags:</strong> {blog.tags.join(', ')}
             </p>

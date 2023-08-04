@@ -8,7 +8,8 @@
   padding-top: 15px;
 }
 
-.add-blog-body {
+.add-blog-body,
+.edit-blog-body {
   background-color: #b0b0b0b2;
   background-position: bottom;
   padding-top: 16px;
@@ -94,15 +95,13 @@
 }
 
 @media (max-width: 768px) {
-  .add-blog-body {
-    background-image: none;
-    background-color: #ffffffb2;
-    background-size: cover;
-    background-position: center;
+  .add-blog-body,
+  .edit-blog-body {
+    height: auto;
   }
 
   .form-group label {
-    color: #cccccc;
+    color: #000000;
     font-size: 1rem;
   }
 
@@ -111,12 +110,12 @@
     padding: 8px;
   }
 
-  .examples {
-    color: #929292;
-  }
-
   .add-button {
     padding: 8px 16px;
     font-size: 1rem;
   }
 }
+
+/* EditBlog -------------------------------------------------------------*/
+
+/* End Nav -------------------------------------------------------------*/
