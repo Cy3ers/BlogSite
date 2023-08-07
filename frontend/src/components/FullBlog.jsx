@@ -16,6 +16,19 @@ const FullBlog = () => {
     handleAddComment,
   } = useHandleFullBlog();
 
+  const dateOptions = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    timeZone: 'Asia/Karachi',
+  };
+
+  const date = new Date(blog.createdAt);
+
+  const formattedDate = date.toLocaleString('en-US', dateOptions);
+
   return (
     <div className="container">
       {loading ? (
@@ -32,6 +45,7 @@ const FullBlog = () => {
                 <BiEdit className="edit-button" />
               </Link>
             </h3>
+            <p className="create-date">Created On: {formattedDate}</p>
             <p className="author">
               <strong>Author:</strong> {blog.author}
             </p>

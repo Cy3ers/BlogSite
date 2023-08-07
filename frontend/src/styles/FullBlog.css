@@ -1,5 +1,11 @@
 /* FullBlog.css */
 
+.create-date {
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+}
+
 .comment-list {
   list-style: none;
   padding: 0;
