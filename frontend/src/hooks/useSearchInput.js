@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { searchBlog } from '../api/api';
 
-const useSearchInput = () => {
+const useSearchInput = (inputRef) => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -28,6 +28,7 @@ const useSearchInput = () => {
     loading,
     handleSearch,
     handleKeyPress,
+    inputRef,
   };
 };
 

@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import useSearchInput from '../hooks/useSearchInput';
 
 const Search = () => {
-  const { query, setQuery, results, loading, handleSearch, handleKeyPress } =
-    useSearchInput();
+  const inputRef = useRef();
+  const {
+    query,
+    setQuery,
+    results,
+    loading,
+    handleSearch,
+    handleKeyPress,
+    inputRef: forwardedInputRef,
+  } = useSearchInput(inputRef);
+
+  useEffect(() => {
+    forwardedInputRef.current.focus();
+  }, [forwardedInputRef]);
 
   return (
     <div className="container">
       <div className="container-title">
         <div className="search-container">
           <input
+            ref={forwardedInputRef}
             className="search-input"
             type="text"
             placeholder="Search..."

@@ -13,6 +13,7 @@
   background-color: transparent;
   padding: 8px;
   font-size: 16px;
+  outline: none;
 }
 
 .search-icon {
