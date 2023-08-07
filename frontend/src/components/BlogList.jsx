@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useBlogList from '../hooks/useBlogList';
+import useBlog from '../hooks/useBlog';
 
 const BlogList = () => {
-  const { blogs, loading } = useBlogList();
+  const { blogs, loading } = useBlog();
 
   return (
     <div className="container">

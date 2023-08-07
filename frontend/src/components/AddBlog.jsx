@@ -1,5 +1,5 @@
 import React from 'react';
-import useAddBlogForm from '../hooks/useAddBlogForm';
+import useBlog from '../hooks/useBlog';
 
 const AddBlog = () => {
   const {
@@ -13,7 +13,7 @@ const AddBlog = () => {
     setTags,
     successMessage,
     handleFormSubmit,
-  } = useAddBlogForm();
+  } = useBlog();
 
   return (
     <div className="add-blog-body">

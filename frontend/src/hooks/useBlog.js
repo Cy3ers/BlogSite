@@ -1,12 +1,14 @@
-import { useState } from 'react';
-import { addBlog } from '../api/api';
+import { useState, useEffect } from 'react';
+import { addBlog, getBlogList } from '../api/api';
 
-const useAddBlogForm = () => {
+const useBlog = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [content, setContent] = useState('');
   const [tags, setTags] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -33,6 +35,13 @@ const useAddBlogForm = () => {
       });
   };
 
+  useEffect(() => {
+    getBlogList().then((response) => {
+      setBlogs(response.data);
+      setLoading(false);
+    });
+  }, []);
+
   return {
     title,
     setTitle,
@@ -44,7 +53,11 @@ const useAddBlogForm = () => {
     setTags,
     successMessage,
     handleFormSubmit,
+    blogs,
+    setBlogs,
+    loading,
+    setLoading,
   };
 };
 
-export default useAddBlogForm;
+export default useBlog;
