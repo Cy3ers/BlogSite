@@ -36,10 +36,15 @@ const useBlog = () => {
   };
 
   useEffect(() => {
-    getBlogList().then((response) => {
-      setBlogs(response.data);
-      setLoading(false);
-    });
+    getBlogList()
+      .then((response) => {
+        setBlogs(response.data);
+        // setLoading(false);
+      })
+      .then(async () => {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        setLoading(false);
+      });
   }, []);
 
   return {
