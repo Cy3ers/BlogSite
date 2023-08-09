@@ -1,0 +1,42 @@
+.error-container {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  right: 15%;
+  bottom: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fffffff2;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.error-header {
+  font-size: 6vw;
+  line-height: 0.2em;
+  position: relative;
+}
+
+.error-subheader {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  max-width: 600px;
+  position: relative;
+}
+
+.reload {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.reload:hover {
+  color: #0060c6;
+  cursor: pointer;
+  text-decoration: underline;
+}

@@ -6,11 +6,13 @@ import Search from './components/Search.jsx';
 import AddBlog from './components/AddBlog.jsx';
 import FullBlog from './components/FullBlog.jsx';
 import EditBlog from './components/EditBlog.jsx';
+import ErrorPage from './components/ErrorPage.jsx';
 import './styles/App.css';
 import './styles/Home.css';
 import './styles/Search.css';
 import './styles/AddBlog.css';
 import './styles/FullBlog.css';
+import './styles/ErrorPage.css';
 
 function App() {
   return (
@@ -40,6 +42,7 @@ function App() {
           <Route exact path="/addBlog" element={<AddBlog />} />
           <Route exact path="/blog/:id" element={<FullBlog />} />
           <Route exact path="/editBlog/:id" element={<EditBlog />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
     </Router>
